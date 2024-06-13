@@ -73,16 +73,9 @@ function goToComplete() {
 // https://app.aonet.ai/api
 // https://app.aonet.ai/kvapi
 async function getAccount() {
-	const options = new Options({
-		type: Options.LoginTypes.TYPE_FP,
-		server: 'https://app.aonet.ai',
-		storeage_url: 'https://app.aonet.ai'
-	});
-
-	console.log(options)
 
 	//User 的使用方法
-	let user = new User(options)
+	let user = new User()
 	let addr = await user.login()
 	console.log("getWeb3 account", addr)
 	account.value = addr[0]
